@@ -39,11 +39,19 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+<<<<<<< HEAD
     transition: .3s;
 }
 
 .header.sticky {
     background-color: var(--bg-color);
+=======
+    transition: .5s;
+}
+
+.header.sticky {
+    background: var(--bg-color);
+>>>>>>> f29272e29addbeb047c0d090bda21e41af6da38b
 }
 
 .logo {

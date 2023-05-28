@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // icono navbar
 let menuIcon = document.querySelector('#icono-menu');
 let navbar = document.querySelector('.navbar');
@@ -37,4 +38,13 @@ window.onscroll =  () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('activo');
 
+=======
+// scroll
+
+window.onscroll = () => {
+    
+    let header = document.querySelector('header');
+
+    header.classList.toggle(sticky , window.scrollY > 100);
+>>>>>>> f29272e29addbeb047c0d090bda21e41af6da38b
 }
