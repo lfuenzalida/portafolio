@@ -25,6 +25,9 @@ body {
     background: var(--bg-color);
     color: var(--text-color)
 }
+
+/* diseño de header y navbar  */
+
 .header{
     position: fixed;
     top: 0;
@@ -66,6 +69,9 @@ section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
+
+/* diseño de inicio */
+
 .inicio {
     display: flex;
     align-items: center;
@@ -84,6 +90,10 @@ section {
     font-weight: 700;
     line-height: 1.3;
 
+}
+
+.cont-inicio h1 span {
+    color: var(--text-color);
 }
 
 .cont-inicio .texto-animado{
@@ -226,6 +236,8 @@ section {
     opacity: .8;
 }
 
+/* diseño de sobre mi */
+
 .sobre-mi {
     display: flex;
     justify-content: center;
@@ -300,6 +312,8 @@ span {
     background: var(--second-bg-color);
 }
 
+/* diseño de educacion */
+
 .educacion {
     display: flex;
     justify-content: center;
@@ -317,7 +331,6 @@ span {
 
 .educacion-fila .educacion-columna{
     flex: 1 1 40rem;
-
 }
 
 .educacion-columna .titulo {
@@ -335,10 +348,301 @@ span {
     padding-left: 2rem;
 }
 
+.caja-educacion .cont-educacion::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--main-color);
+    border-radius: 50%;
+}
+
 .cont-educacion .contenido {
     position: relative;
     padding: 1.5rem;
     border: .2rem solid var(--main-color);
     border-radius: .6rem;
     margin-bottom: 2rem;
+    overflow: hidden;
 }
+
+.cont-educacion .contenido::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.cont-educacion .contenido:hover::before {
+    width: 100%;
+}
+
+.cont-educacion .contenido .año {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.cont-educacion .contenido .año i {
+    padding-right: .5rem;
+}
+
+.cont-educacion .contenido h3 {
+    font-size: 1.5rem;
+}
+
+.cont-educacion .contenido p {
+    font-size: 1.2rem;
+    padding-top: .1rem;
+}
+
+/* Diseño de habilidades */
+
+.habilidades {
+    min-height: auto;
+    padding-bottom: 7rem;
+    background: var(--second-bg-color);
+}
+
+.habilidades .filas-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.filas-habilidades .columnas-habilidades {
+    flex: 1 1 4rem;
+}
+
+.columnas-habilidades .titulo {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;   
+}
+
+.caja-habilidades .cont-habilidades {
+    position: relative;
+    border: .2rem solid var(--main-color);
+    border-radius: .6rem;
+    padding: .5rem 1.5rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.caja-habilidades .cont-habilidades::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color);
+    z-index: -1;
+    transition: .5s;
+}
+
+.caja-habilidades .cont-habilidades:hover::before{
+    width: 100%;
+}
+
+
+.cont-habilidades .progreso {
+    padding: 1rem 0;
+}
+
+.cont-habilidades .progreso h3 {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont-habilidades .progreso h3 span {
+    color: var(--text-color);
+}
+
+.cont-habilidades .progreso .barra{
+    height: 2.5rem;
+    border-radius: .6rem;
+    border: .2rem solid var(--main-color);
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.cont-habilidades .progreso .barra span {
+    display: block;
+    height: 100%;
+    border-radius: .3rem;
+    background: var(--main-color);
+} 
+
+.columnas-habilidades:nth-child(1) .cont-habilidades .progreso:nth-child(1) .barra span {
+    width: 70%;
+}
+
+.columnas-habilidades:nth-child(1) .cont-habilidades .progreso:nth-child(2) .barra span {
+    width: 50%;
+}
+
+.columnas-habilidades:nth-child(1) .cont-habilidades .progreso:nth-child(3) .barra span {
+    width: 20%;
+}
+
+.columnas-habilidades:nth-child(1) .cont-habilidades .progreso:nth-child(4) .barra span {
+    width: 15%;
+}
+
+.columnas-habilidades:nth-child(2) .cont-habilidades .progreso:nth-child(1) .barra span {
+    width: 90%;
+}
+
+.columnas-habilidades:nth-child(2) .cont-habilidades .progreso:nth-child(2) .barra span {
+    width: 80%;
+}
+
+.columnas-habilidades:nth-child(2) .cont-habilidades .progreso:nth-child(3) .barra span {
+    width: 70%;
+}
+
+.columnas-habilidades:nth-child(2) .cont-habilidades .progreso:nth-child(4) .barra span {
+    width: 65%;
+}
+
+/* Diseño de Contacto */
+
+.contacto {
+    min-height: auto;
+    padding-bottom: 70rem;
+}
+
+.contacto form {
+    max-width: 70rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contacto form .caja-input {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contacto form .caja-input .input-campo {
+    position: relative;
+    width: 49%;
+    margin: .8rem 0;
+}
+
+.contacto form .caja-input .input-campo input,
+.contacto form .campo-texto textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem ;
+    color: var(--text-color);
+    background: transparent;
+    border-radius: .6rem;
+    border: .2em solid var(--main-color);
+}
+
+.contacto form .caja-input .input-campo input::placeholder,
+.contacto form .campo-texto textarea::placeholder {
+    color: var(--text-color);
+}
+
+.contacto form .foco {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    border-radius: .6rem;
+    z-index: -1;
+    transition: .5s;
+}
+
+.contacto form .caja-input .input-campo input:focus~.foco,
+.contacto form .caja-input .input-campo input:valid~.foco,
+.contacto form .campo-texto textarea:focus~.foco,
+.contacto form .campo-texto textarea:valid~.foco {
+    width: 100%;
+}
+
+
+.contacto form .campo-texto {
+    position: relative;
+    margin: .8rem 0 2.7rem;
+    display: flex;
+}
+
+.contacto form .campo-texto textarea {
+    resize: none;
+}
+
+.contacto form .btn-box.btns .btn {
+    cursor: pointer;
+}
+
+
+
+/* diseño footer */
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background-color: var(--second-bg-color);
+}
+
+
+.texto-footer {
+    font-size: 1.6rem;
+}
+
+.iconoUp-footer {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem ;
+    background: var(--main-color);
+    border-radius: .6rem;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.iconoUp-footer a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--second-bg-color);
+    z-index: -1;
+}
+
+.iconoUp-footer a:hover::before{
+    width: 100%;
+}
+
+.iconoUp-footer a i {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
+
+.iconoUp-footer a:hover i {
+    color: var(--main-color);
+}
+
