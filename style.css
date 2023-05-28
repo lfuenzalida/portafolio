@@ -39,6 +39,11 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky {
+    background-color: var(--bg-color);
 }
 
 .logo {
@@ -82,7 +87,8 @@ section {
 }
 
 .cont-inicio {
-    max-width: 60rem ;
+    max-width: 60rem;
+    z-index: 99;
 }
 
 .cont-inicio h1 {
@@ -107,6 +113,26 @@ section {
     font-weight: 700;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: 0rem 0;
+    animation: homeBgtext 6s linear infinite;
+    animation-delay: 2s;
+}
+
+.cont-inicio .texto-animado h3::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursortext 6s linear infinite;
+    animation-delay: 2s;
+    
 }
 
 .cont-inicio p {
@@ -287,6 +313,7 @@ span {
     border-bottom: .2rem solid var(--second-bg-color);
     border-left: .2rem solid var(--main-color);
     border-right: .2rem solid var(--main-color);
+    animation: SobreMiRuleta 8s linear infinite;
 }
 
 .cont-sobre-mi {
@@ -646,3 +673,168 @@ span {
     color: var(--main-color);
 }
 
+/* puntos de quiebre */
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 960px){
+    header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .inicio{
+        padding: 0 4%;
+    }
+
+    .footer{
+        padding: 2rem 4%;
+    }
+}
+
+
+@media (max-width: 768px){ 
+    .header{
+        background: var(--bg-color);
+    }
+
+    #icono-menu {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        z-index: 1;
+        transition: .25s ease;
+        transition-delay: .25s;
+    }
+
+    .navbar.activo {
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .navbar .nav-activo{
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.activo .nav-activo {
+        transition-delay: .25s;
+        left: 0;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem;
+        transform: translateX(-20rem);
+    }
+
+    .navbar.activo a {
+        transform: translateX(0);
+        transition-delay: .25s;
+    }
+
+    .hover-imagen{
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+}
+
+
+@media (max-width: 680px) {
+    html {
+        font-size: 50%;
+    }
+
+    .cont-inicio h1 {
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    .RD-inicio {
+        width: 160px;
+    }
+
+    .RD-inicio a {
+        width: 38px;
+        height: 38px;
+    }
+
+    .educacion{
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contacto form .caja-input .input-campo {
+        width: 100%;
+    }
+
+    .footer {
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+    }
+}
+
+/* FRAME DE ANIMACION */
+
+@keyframes homeBgtext {
+    0%, 10%, 100% {
+        background-position: -33rem 0;
+    }
+
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursortext {
+    0%, 10%, 100% {
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+    75%,
+    81%{
+        opacity: 0;
+    }
+}
+
+@keyframes SobreMiRuleta {
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
